@@ -7,10 +7,10 @@ let i = 0
 button.addEventListener('click', () => {
     let listItem = document.getElementById('name').value;
     
-    const itemOne = document.createElement('li')
-    itemOne.textContent = listItem
-    itemOne.setAttribute('id', i)
-    itemOne.setAttribute('class', 'listItems')
+    const itemOnList = document.createElement('li')
+    itemOnList.textContent = listItem
+    itemOnList.setAttribute('id', i)
+    itemOnList.setAttribute('class', 'listItems')
 
     const deleteButton = document.createElement('button');
     deleteButton.setAttribute('type', 'button')
@@ -20,12 +20,12 @@ button.addEventListener('click', () => {
     i++
 
     deleteButton.addEventListener('click', function() {
-        itemOne.remove();
+        itemOnList.remove();
         this.remove();
     })
 
-    itemOne.appendChild(deleteButton)
-    list.appendChild(itemOne)
+    itemOnList.appendChild(deleteButton)
+    list.appendChild(itemOnList)
 
     
 });
