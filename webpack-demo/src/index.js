@@ -1,17 +1,19 @@
-/* import _ from 'lodash';
+import _ from 'lodash';
+import './style.css';
 
 function component() {
     const element = document.createElement('div');
   
     // Lodash, is now imported into the script
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
+    element.classList.add('hello');
+
     return element;
   }
   
-  document.body.appendChild(component()); */
+  document.body.appendChild(component());
 
-  import myName from './myName';
+/*   import myName from './myName';
 
 function component() {
   const element = document.createElement('div');
@@ -21,4 +23,4 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+document.body.appendChild(component()); */
