@@ -43,3 +43,7 @@ body {
 .dropdown-option:hover {
     background-color: blue;
 }
+
+a {
+    color: white;
+}
