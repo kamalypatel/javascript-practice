@@ -1,5 +1,7 @@
 let currentSlide = 'one'
 
+let hasHitTwo = false
+
 function next() {
     const nextArrow = document.querySelector('.right')
 
@@ -87,7 +89,8 @@ function slidesOptions() {
 }
 
 function rotateSlides() {
-    const currentSlideToHide = document.getElementById(currentSlide)
+    if (hasHitTwo == true) {
+        const currentSlideToHide = document.getElementById(currentSlide)
     currentSlideToHide.setAttribute('style', 'display: none;')
 
     if (currentSlide == 'one') {
@@ -99,8 +102,10 @@ function rotateSlides() {
     }
 
     const currentSlideToShow = document.getElementById(currentSlide)
-    currentSlideToShow.setAttribute('style', 'display: block;')
-
+    currentSlideToShow.setAttribute('style', 'display: block;')    
+    }
+    
+    hasHitTwo = true
     setTimeout(rotateSlides, 5000)
 }
 
