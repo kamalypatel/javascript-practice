@@ -2,3 +2,15 @@
     width: 400px;
     height: 400px;
 }
+
+#one {
+    display: block;
+}
+
+#two {
+    display: none;
+}
+
+#three {
+    display: none;
+}
