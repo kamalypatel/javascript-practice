@@ -86,10 +86,28 @@ function slidesOptions() {
     sliderOptions.appendChild(thirdCircle)
 }
 
+function rotateSlides() {
+    const currentSlideToHide = document.getElementById(currentSlide)
+    currentSlideToHide.setAttribute('style', 'display: none;')
 
+    if (currentSlide == 'one') {
+        currentSlide = 'two'
+    } else if (currentSlide == 'two') {
+        currentSlide = 'three'
+    } else if (currentSlide == 'three') {
+        currentSlide = 'one'
+    }
+
+    const currentSlideToShow = document.getElementById(currentSlide)
+    currentSlideToShow.setAttribute('style', 'display: block;')
+
+    setTimeout(rotateSlides, 5000)
+}
 
 next()
 
 back()
 
 slidesOptions()
+
+rotateSlides()
