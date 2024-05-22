@@ -3,7 +3,7 @@ let currentSlide = 'one'
 function next() {
     const nextArrow = document.querySelector('.right')
 
-    nextArrow.addEventListener('onclick', () => {
+    nextArrow.addEventListener('click', () => {
         const currentSlideToHide = document.getElementById(currentSlide)
         currentSlideToHide.setAttribute('style', 'display: none;')
 
@@ -24,7 +24,7 @@ function next() {
 function back() {
     const backArrow = document.querySelector('.left')
 
-    backArrow.addEventListener('onclick', () => {
+    backArrow.addEventListener('click', () => {
         const currentSlideToHide = document.getElementById(currentSlide)
         currentSlideToHide.setAttribute('style', 'display: none;')
 
