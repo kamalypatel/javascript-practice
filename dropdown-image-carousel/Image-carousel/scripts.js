@@ -42,6 +42,54 @@ function back() {
     })
 }
 
+function slidesOptions() {
+    const sliderOptions = document.querySelector('.sliderOptions')
+    
+    const firstCircle = document.createElement('div')
+    firstCircle.classList.add('circles')
+    firstCircle.addEventListener('click', () => {
+        const currentSlideToHide = document.getElementById(currentSlide)
+        currentSlideToHide.setAttribute('style', 'display: none;')
+
+        currentSlide = 'one'
+
+        const currentSlideToShow = document.getElementById(currentSlide)
+        currentSlideToShow.setAttribute('style', 'display: block;')
+    })
+
+    const secondCircle = document.createElement('div')
+    secondCircle.classList.add('circles')
+    secondCircle.addEventListener('click', () => {
+        const currentSlideToHide = document.getElementById(currentSlide)
+        currentSlideToHide.setAttribute('style', 'display: none;')
+
+        currentSlide = 'two'
+
+        const currentSlideToShow = document.getElementById(currentSlide)
+        currentSlideToShow.setAttribute('style', 'display: block;')
+    })
+
+    const thirdCircle = document.createElement('div')
+    thirdCircle.classList.add('circles')
+    thirdCircle.addEventListener('click', () => {
+        const currentSlideToHide = document.getElementById(currentSlide)
+        currentSlideToHide.setAttribute('style', 'display: none;')
+
+        currentSlide = 'three'
+
+        const currentSlideToShow = document.getElementById(currentSlide)
+        currentSlideToShow.setAttribute('style', 'display: block;')
+    })
+
+    sliderOptions.appendChild(firstCircle)
+    sliderOptions.appendChild(secondCircle)
+    sliderOptions.appendChild(thirdCircle)
+}
+
+
+
 next()
 
 back()
+
+slidesOptions()
