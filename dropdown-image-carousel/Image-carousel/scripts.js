@@ -1,6 +1,7 @@
 let currentSlide = 'one'
-
 let hasHitTwo = false
+let slideTimeout
+
 
 function next() {
     const nextArrow = document.querySelector('.right')
@@ -20,6 +21,8 @@ function next() {
         const currentSlideToShow = document.getElementById(currentSlide)
         currentSlideToShow.setAttribute('style', 'display: block;')
 
+        clearTimeout(slideTimeout)
+        slideTimeout = setTimeout(rotateSlides, 5000)
     })
 }
 
@@ -41,6 +44,8 @@ function back() {
         const currentSlideToShow = document.getElementById(currentSlide)
         currentSlideToShow.setAttribute('style', 'display: block;')
 
+        clearTimeout(slideTimeout)
+        slideTimeout = setTimeout(rotateSlides, 5000)
     })
 }
 
@@ -57,6 +62,9 @@ function slidesOptions() {
 
         const currentSlideToShow = document.getElementById(currentSlide)
         currentSlideToShow.setAttribute('style', 'display: block;')
+        
+        clearTimeout(slideTimeout)
+        slideTimeout = setTimeout(rotateSlides, 5000)
     })
 
     const secondCircle = document.createElement('div')
@@ -69,6 +77,9 @@ function slidesOptions() {
 
         const currentSlideToShow = document.getElementById(currentSlide)
         currentSlideToShow.setAttribute('style', 'display: block;')
+        
+        clearTimeout(slideTimeout)
+        slideTimeout = setTimeout(rotateSlides, 5000)
     })
 
     const thirdCircle = document.createElement('div')
@@ -81,6 +92,9 @@ function slidesOptions() {
 
         const currentSlideToShow = document.getElementById(currentSlide)
         currentSlideToShow.setAttribute('style', 'display: block;')
+        
+        clearTimeout(slideTimeout)
+        slideTimeout = setTimeout(rotateSlides, 5000)
     })
 
     sliderOptions.appendChild(firstCircle)
@@ -106,7 +120,8 @@ function rotateSlides() {
     }
     
     hasHitTwo = true
-    setTimeout(rotateSlides, 5000)
+    clearTimeout(slideTimeout)
+    slideTimeout = setTimeout(rotateSlides, 5000)
 }
 
 next()
