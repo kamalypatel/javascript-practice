@@ -12,6 +12,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.arrow:hover {
+    color: lime;
+}
+
 .slide {
     width: 400px;
     height: 400px;
@@ -27,4 +31,23 @@
 
 #three {
     display: none;
+}
+
+.sliderOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.circles {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 15px;
+}
+
+.circles:hover {
+    background-color: lime;
 }
