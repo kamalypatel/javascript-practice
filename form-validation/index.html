@@ -3,12 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylehsheet" href="normalize.css">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
     <title>Form Validation</title>
 </head>
 <body>
-    
+    <form action="" class="form">
+        <label for="email">Email:</label>
+        <input type="email" id="mail" name="email" placeholder="name@gmail.com">
+        <span class="email-error"></span>
+
+        <br>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" placeholder="Canada">
+        <span class="country-error"></span>
+
+        <br>
+
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" placeholder="123456">
+        <span class="zipcode-error"></span>
+
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password">
+        <span class="password-error"></span>
+
+        <br>
+
+        <label for="passwordConfirm">Confirm Password:</label>
+        <input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Confirm Password">
+        <span class="password-confirmation-error"></span>
+
+        <br>
+
+        <button type="submit" class="button">Submit Form</button>
+    </form>
 </body>
 </html>
