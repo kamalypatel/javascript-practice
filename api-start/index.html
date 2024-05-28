@@ -6,12 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <img src="#" />
+    <form>
+        <label for="search">Search For Gifs</label>
+        <input type="text" id="search" name="search">
+    </form>
     <button type="button" class="button"> Click Me!</button>
+    
+    <img src="#" />
     <script>
   const img = document.querySelector('img');
-  function getCats() {
-    fetch('https://api.giphy.com/v1/gifs/translate?api_key=IULI2JRMZmiMBVRXCkFDmPU2u6h8BvJQ&s=cats', {mode: 'cors'})
+ 
+  function getGifs() {
+    let searchField = document.getElementById('search').value
+    if (searchField == '') {
+        searchField = 'cats'
+    }
+    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=IULI2JRMZmiMBVRXCkFDmPU2u6h8BvJQ&s=${searchField}`, {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
@@ -19,9 +29,9 @@
       img.src = response.data.images.original.url;
     });
   }
-    getCats()
+    getGifs()
     const button = document.querySelector('.button')
-    button.addEventListener('click', getCats)
+    button.addEventListener('click', getGifs)
 </script>
 
     </script>
