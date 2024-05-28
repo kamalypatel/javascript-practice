@@ -7,15 +7,21 @@
   </head>
   <body>
     <img src="#" />
+    <button type="button" class="button"> Click Me!</button>
     <script>
   const img = document.querySelector('img');
-  fetch('https://api.giphy.com/v1/gifs/translate?api_key=IULI2JRMZmiMBVRXCkFDmPU2u6h8BvJQ&s=cats', {mode: 'cors'})
+  function getCats() {
+    fetch('https://api.giphy.com/v1/gifs/translate?api_key=IULI2JRMZmiMBVRXCkFDmPU2u6h8BvJQ&s=cats', {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
     .then(function(response) {
       img.src = response.data.images.original.url;
     });
+  }
+    getCats()
+    const button = document.querySelector('.button')
+    button.addEventListener('click', getCats)
 </script>
 
     </script>
