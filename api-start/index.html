@@ -27,6 +27,9 @@
     })
     .then(function(response) {
       img.src = response.data.images.original.url;
+    })
+    .catch(function(error) {
+        console.log('No Gifs Found', error)
     });
   }
     getGifs()
