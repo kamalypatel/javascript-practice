@@ -12,7 +12,7 @@
 //         sum.push(1)
 //         console.log(sum)
 //     } else {
-//         sum[i] = sum[i-1] + sum[i-2]
+//         sum.push(sum[i-1] + sum[i-2])
 //         console.log(sum)
 //     }
 // }
@@ -26,9 +26,9 @@
 //     } if (n==1) {
 //         return 1
 //     } else {
-//         return fibs(n-2) + fibs(n-1)
+//         return fibs((n-2) + fibs(n-1))
 //     }
 // }
 
-// let n = 10
+// let n = 9
 // console.log(fibs(n))
