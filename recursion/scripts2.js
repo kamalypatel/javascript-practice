@@ -42,16 +42,17 @@ let rightHalf = []
 
 function mergeSort(n){
     let mid = n.length / 2
-
+    
     for (let i = 0; i < mid; i++){
         leftHalf.push(n[i])
     }
     for (let i = mid; i < n.length; i++){
         rightHalf.push(n[i])
     }
-
     console.log(leftHalf)
     console.log(rightHalf)
+    mergeSort(leftHalf)
+    mergeSort(rightHalf)
 }
 
 mergeSort(array)
