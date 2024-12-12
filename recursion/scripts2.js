@@ -37,22 +37,30 @@
 // Merge Sort
 
 let array = [3, 2, 1, 13, 8, 5, 0, 1]
-let leftHalf = []
-let rightHalf = []
 
 function mergeSort(n){
-    let mid = n.length / 2
+    if (n.length <= 1) {
+        return n
+    }
     
-    for (let i = 0; i < mid; i++){
-        leftHalf.push(n[i])
-    }
-    for (let i = mid; i < n.length; i++){
-        rightHalf.push(n[i])
-    }
-    console.log(leftHalf)
-    console.log(rightHalf)
-    mergeSort(leftHalf)
-    mergeSort(rightHalf)
+    let mid = Math.floor(n.length / 2)
+
+    let leftHalf = mergeSort(n.slice(0,mid))
+    let rightHalf = mergeSort(n.slice(mid))
+    
+    return merge(leftHalf, rightHalf)
 }
 
-mergeSort(array)
+function merge(left, right) {
+    let result = []
+    while (left.length && right.length) {
+        if (left[0] < right[0]) {
+            result.push(left.shift())
+        } else {
+            result.push(right.shift())
+        }
+    }
+    return result.concat(left,right)
+}
+
+console.log(mergeSort(array))
